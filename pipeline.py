@@ -24,6 +24,7 @@ def boston_pipeline():
 
 
 if __name__ == '__main__':
-    kfp.compiler.Compiler().compile(boston_pipeline, __file__ + '.zip')
+    experiment_name = 'boston_price_kubeflow'
+    kfp.compiler.Compiler().compile(boston_pipeline,'{}.zip'.format(experiment_name))
     client = kfp.Client()
     client.create_run_from_pipeline_func(boston_pipeline, arguments={})
