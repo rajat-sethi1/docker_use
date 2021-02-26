@@ -1,0 +1,4 @@
+gcp_bucket: 
+    github_action
+project: 
+    kubeflow-github-267119
